@@ -1,4 +1,6 @@
+from __future__ import print_function
 from random import *
+
 
 def binary_search():
     number = randint(1,6000)
@@ -63,7 +65,7 @@ def bubble_sort():
         array = list(characterString)
         print("Starting list:"),
         for z in range(0, len(array)):
-            print(str(array[z])),
+            print(str(array[z]), end="")
         print("\n")
         ASCIIarray = []
         sortedArray = []
@@ -79,6 +81,10 @@ def bubble_sort():
                 elif ASCIIarray[i] > ASCIIarray[i+1]:
                     ASCIIarray[i], ASCIIarray[i+1] = ASCIIarray[i+1], ASCIIarray[i]
                 i += 1
+                for x in ASCIIarray:
+                    character = chr(x)
+                    print(character, end="")
+                print("")
                 if ASCIIarray == sorted(ASCIIarray):
                     break
         for x in ASCIIarray:
@@ -87,7 +93,7 @@ def bubble_sort():
         print("\n")
         print("Sorted list:"),
         for z in range(0, len(sortedArray)):
-            print(str(sortedArray[z])),
+            print(sortedArray[z], end="")
     sort_characters()
 
 def quick_sort():
