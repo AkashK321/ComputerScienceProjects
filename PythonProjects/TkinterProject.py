@@ -59,10 +59,10 @@ class myApplication(Frame):
         
         if self.i >= (len(self.imgArray)):
             print("All logos have been identified")
-            self.imgDirectory = "/Users/akkuma22/PythonProjects/gameOver.png"
+            self.imgDirectory = "/Users/akkuma22/ComputerScienceProjects/PythonProjects/gameOver.png"
             self.displayImage(self.imgDirectory)
         else:
-            self.imgDirectory = "/Users/akkuma22/PythonProjects/" + self.imgArray[self.i] + ".jpg"
+            self.imgDirectory = "/Users/akkuma22/ComputerScienceProjects/PythonProjects/" + self.imgArray[self.i] + ".jpg"
             self.displayImage(self.imgDirectory)
         
         # print("image")
@@ -81,7 +81,7 @@ class myApplication(Frame):
     def checkAnswer(self, inputValue):
         if inputValue.lower() == self.imgArray[self.i]:
             print("Correct")
-            self.imgDirectory = "/Users/akkuma22/PythonProjects/correct.jpg"
+            self.imgDirectory = "/Users/akkuma22/ComputerScienceProjects/PythonProjects/correct.jpg"
             self.img = Image.open(self.imgDirectory)
             self.img = self.img.resize((350,350), Image.ANTIALIAS)
             self.img = ImageTk.PhotoImage(self.img)
