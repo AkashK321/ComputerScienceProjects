@@ -49,23 +49,16 @@ class myApplication(Frame):
         self.response_box.pack(side="bottom")
         
     def displayNextImage(self):
-        # self.imgArray = ["adidas", "nike"]
-        # shuffle(self.imgArray)
         
         if self.i == 0:
             self.start.pack_forget()
-            
-        print(self.i)
         
         if self.i >= (len(self.imgArray)):
-            print("All logos have been identified")
             self.imgDirectory = "/Users/akkuma22/ComputerScienceProjects/PythonProjects/gameOver.png"
             self.displayImage(self.imgDirectory)
         else:
             self.imgDirectory = "/Users/akkuma22/ComputerScienceProjects/PythonProjects/" + self.imgArray[self.i] + ".jpg"
             self.displayImage(self.imgDirectory)
-        
-        # print("image")
         
     def displayImage(self, imgDirectory):
         self.img = Image.open(imgDirectory)
@@ -75,26 +68,18 @@ class myApplication(Frame):
         
     def retrieveInput(self):
         self.inputValue = self.response_box.get("1.0", "end-1c")
-        # print(self.inputValue)
         self.checkAnswer(self.inputValue)
     
     def checkAnswer(self, inputValue):
         if inputValue.lower() == self.imgArray[self.i]:
-            print("Correct")
             self.imgDirectory = "/Users/akkuma22/ComputerScienceProjects/PythonProjects/correct.jpg"
             self.img = Image.open(self.imgDirectory)
             self.img = self.img.resize((350,350), Image.ANTIALIAS)
             self.img = ImageTk.PhotoImage(self.img)
             self.canvas.create_image(85, 150, anchor=NW, image=self.img)
-            self.i += 1
-            # self.create_buttons.next_logo.pack()
-            
-        
-        
-        # print(self.i)
-        
-        
-        
+            self.i += 1 
+ 
+
 window = Tk()
 
 window.geometry("1000x1000")
